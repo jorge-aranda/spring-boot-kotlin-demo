@@ -6,9 +6,13 @@ import org.springframework.stereotype.Service
 
 interface DemoService {
     fun greet() : DemoGreetingResponse
+    fun greet(greet : String, name : String?) : DemoGreetingResponse
 }
 
 @Service
 class DemoServiceImpl : DemoService {
-    override fun greet() = DemoGreetingResponse(greet = "Hello World!")
+    override fun greet() = DemoGreetingResponse(greet = "Hello World!",
+                                                 name = null)
+    override fun greet(greet: String, name: String?) =
+            DemoGreetingResponse(greet = greet, name = name)
 }
