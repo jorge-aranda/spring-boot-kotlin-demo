@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.*
 //import java.util.*
 
 @JsonInclude(Include.NON_NULL)
-class DemoGreetingResponse(
+data class DemoGreetingResponse(
         //    var greet : Optional<String> = Optional.empty()
         var greet : String?,
         var name : String?
