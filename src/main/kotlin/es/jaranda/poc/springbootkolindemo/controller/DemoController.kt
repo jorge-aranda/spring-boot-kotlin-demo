@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController
 class DemoController(val demoService : DemoService) {
 
     @GetMapping("/greet")
-    fun greet() = demoService.greet()
+    fun greet() = demoService.loggedGreet()
 
     @GetMapping("/custom-greet")
     fun greet(@RequestParam greet : String,
               @RequestParam(required=false) name : String?
-    ) = demoService.greet(greet, name)
+    ) = demoService.loggedGreet(greet, name)
 
 }
