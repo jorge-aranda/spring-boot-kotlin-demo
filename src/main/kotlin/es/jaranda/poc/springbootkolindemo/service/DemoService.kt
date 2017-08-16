@@ -1,7 +1,7 @@
 
 package es.jaranda.poc.springbootkolindemo.service
 
-import es.jaranda.poc.springbootkolindemo.log
+import es.jaranda.poc.springbootkolindemo.utils.log
 import es.jaranda.poc.springbootkolindemo.model.dto.response.DemoGreetingResponse
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service

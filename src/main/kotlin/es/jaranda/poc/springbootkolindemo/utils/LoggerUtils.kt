@@ -1,5 +1,6 @@
 
-package es.jaranda.poc.springbootkolindemo
+@file:JvmName("LoggerUtils")
+package es.jaranda.poc.springbootkolindemo.utils
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
