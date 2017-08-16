@@ -8,7 +8,9 @@ import org.slf4j.LoggerFactory
  * Logger factory
  *
  * @see https://stackoverflow.com/questions/34416869/idiomatic-way-of-logging-in-kotlin
+ * @see https://kotlinlang.org/docs/reference/extensions.html
  */
-fun <R : Any> R.generateLogger(): Lazy<Logger> {
-    return lazy { LoggerFactory.getLogger(this.javaClass) }
-}
+private fun <R : Any> generateLogger(item : R) =
+        lazy { LoggerFactory.getLogger(item.javaClass) }
+
+val <R : Any> R.log : Logger get() = generateLogger(this).value
