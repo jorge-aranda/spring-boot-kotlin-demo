@@ -1,3 +1,4 @@
+
 package es.jaranda.poc.springbootkolindemo
 
 import org.junit.Test
@@ -7,10 +8,11 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class SpringBootKotlinDemoApplicationTests {
+class SpringBootKotlinDemoApplicationIT {
 
-	@Test
-	fun contextLoads() {
-	}
+    @Test
+    fun contextLoads() {
+        // only test spring context
+    }
 
 }
