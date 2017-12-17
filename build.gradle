@@ -1,16 +1,17 @@
+
 buildscript {
-	ext {
-		kotlinVersion = '1.2.0'
-		springBootVersion = '1.5.9.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
-	}
+    ext {
+        kotlinVersion = '1.2.0'
+        springBootVersion = '1.5.9.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+    }
 }
 
 apply plugin: 'kotlin'
@@ -21,30 +22,30 @@ apply plugin: 'groovy'
 
 version = '0.3.0-SNAPSHOT'
 sourceCompatibility = 1.8
+
 compileKotlin {
-	kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "1.8"
 }
 compileTestKotlin {
-	kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
-
 
 dependencies {
     /* Spring boot */
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
 //	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
-	compile('org.springframework.boot:spring-boot-starter-validation')
+    compile('org.springframework.boot:spring-boot-starter-validation')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 
     /* Kotlin */
-	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
-	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
+    compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 
     /* Spock */
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'

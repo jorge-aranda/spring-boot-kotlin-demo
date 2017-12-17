@@ -14,4 +14,7 @@ import org.slf4j.LoggerFactory
 private fun <R : Any> generateLogger(item : R) =
         lazy { LoggerFactory.getLogger(item.javaClass) }
 
+/**
+ * Logger for the current class
+ */
 val <R : Any> R.log : Logger get() = generateLogger(this).value
