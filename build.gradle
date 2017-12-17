@@ -1,3 +1,4 @@
+// TODO pending to refactor whole build.gradle organization
 
 configurations {
     optional
