@@ -13,15 +13,13 @@ interface KartofelMapper {
 
 @Component
 class KartofelMapperImpl : KartofelMapper {
-    override fun toDomain(request: KartofelCreationRequest): Kartofel {
-        return Kartofel(
-                id = request.id,
-                message = request.message)
-    }
-
-    override fun toResponse(domain: Kartofel) =
-            KartofelResponse(
-                    id = domain.id,
-                    message = domain.message
-            )
+    override fun toDomain(request: KartofelCreationRequest) = request.toDomain()
+    override fun toResponse(domain: Kartofel) = domain.toResponse()
 }
+
+fun KartofelCreationRequest.toDomain() =
+        Kartofel(id=this.id, message=this.message)
+
+fun Kartofel.toResponse() =
+        KartofelResponse(id=this.id, message=this.message)
+
