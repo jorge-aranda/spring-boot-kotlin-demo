@@ -1,4 +1,6 @@
 
+@file:JvmName("KartofelMappingFunctions")
+
 package es.jaranda.poc.springbootkolindemo.mapper
 
 import es.jaranda.poc.springbootkolindemo.model.domain.Kartofel
