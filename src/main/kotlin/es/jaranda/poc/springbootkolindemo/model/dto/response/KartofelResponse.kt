@@ -5,6 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 data class KartofelResponse(
-        var id : String?,
-        var message : String?
+        val id : String,
+        val message : String?
 )
