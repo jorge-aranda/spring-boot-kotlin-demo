@@ -7,6 +7,6 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 data class KartofelCreationRequest @JsonCreator constructor(
-        @JsonProperty("id") var id : String?,
-        @JsonProperty("message") var message : String?
+        @JsonProperty("id") val id : String,
+        @JsonProperty("message") val message : String?
 )

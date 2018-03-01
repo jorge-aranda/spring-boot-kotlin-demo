@@ -4,7 +4,6 @@ package es.jaranda.poc.springbootkolindemo.mapper
 import es.jaranda.poc.springbootkolindemo.model.domain.Kartofel
 import es.jaranda.poc.springbootkolindemo.model.dto.request.KartofelCreationRequest
 import es.jaranda.poc.springbootkolindemo.model.dto.response.KartofelResponse
-import io.vavr.kotlin.option
 import org.springframework.stereotype.Component
 
 interface KartofelMapper {
@@ -16,9 +15,7 @@ interface KartofelMapper {
 class KartofelMapperImpl : KartofelMapper {
     override fun toDomain(request: KartofelCreationRequest): Kartofel {
         return Kartofel(
-                id = request.id
-                        .option()
-                        .getOrElseThrow { IllegalArgumentException() },
+                id = request.id,
                 message = request.message)
     }
 
