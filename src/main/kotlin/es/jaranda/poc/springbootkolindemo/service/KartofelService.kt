@@ -21,8 +21,11 @@ class KartofelServiceImpl(val kartofelRepository: KartofelRepository)
     override fun get(id : String) = `try` {
         kartofelRepository
                 .get(id)
-                .getOrElseThrow { NoSuchElementException() }
+                .getOrElseThrow { NoSuchElementException() }    // TODO use a @ResponseStatus to returns 404
     }
     override fun save(kartofel : Kartofel) = kartofelRepository.save(kartofel)
+
+    // TODO async save operation?
+    // TODO async findAll and get operations?
 
 }
