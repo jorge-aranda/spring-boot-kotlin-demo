@@ -1,6 +1,7 @@
 
 package es.jaranda.poc.springbootkolindemo.service
 
+import es.jaranda.poc.springbootkolindemo.exceptions.ResourceNotFoundException
 import es.jaranda.poc.springbootkolindemo.model.domain.Kartofel
 import es.jaranda.poc.springbootkolindemo.repository.KartofelRepository
 import io.vavr.control.Try
@@ -19,9 +20,12 @@ class KartofelServiceImpl(val kartofelRepository: KartofelRepository)
 
     override fun findAll() = kartofelRepository.findAll()
     override fun get(id : String) = `try` {
-        kartofelRepository
-                .get(id)
-                .getOrElseThrow { NoSuchElementException() }    // TODO use a @ResponseStatus to returns 404
+        kartofelRepository.get(id)
+                .getOrElseThrow {
+                    ResourceNotFoundException(
+                            "kartofel with id=${id} not found"
+                    )
+                }
     }
     override fun save(kartofel : Kartofel) = kartofelRepository.save(kartofel)
 
