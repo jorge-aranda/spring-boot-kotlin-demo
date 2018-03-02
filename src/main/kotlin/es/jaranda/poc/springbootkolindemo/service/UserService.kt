@@ -26,7 +26,7 @@ class UserServiceImpl(val userRepository: UserRepository) : UserService {
         userRepository.get(id)
                 .getOrElseThrow {
                     ResourceNotFoundException(
-                            "User with id=${id} not found"
+                            "User with id=$id not found"
                     )
                 }
     }
