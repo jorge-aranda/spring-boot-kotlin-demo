@@ -4,7 +4,6 @@ package es.jaranda.poc.springbootkolindemo.service
 import es.jaranda.poc.springbootkolindemo.exceptions.ResourceNotFoundException
 import es.jaranda.poc.springbootkolindemo.model.domain.User
 import es.jaranda.poc.springbootkolindemo.repository.UserRepository
-import io.vavr.control.Option
 import io.vavr.control.Try
 import io.vavr.kotlin.`try`
 import org.springframework.stereotype.Service

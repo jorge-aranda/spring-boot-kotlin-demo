@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServletResponse
 @RestControllerAdvice
 class ControllersConfiguration {
 
-    @ExceptionHandler(IllegalStateException::class)
+    @ExceptionHandler(
+            IllegalStateException::class,
+            IllegalArgumentException::class
+    )
     fun handleBadRequests(ex: Exception, response: HttpServletResponse) {
         response.sendError(HttpStatus.BAD_REQUEST.value(), ex.message)
     }

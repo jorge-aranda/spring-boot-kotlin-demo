@@ -26,7 +26,7 @@ class UserController(val userService: UserService,
     @PostMapping
     fun registerUser(
             @RequestBody userRegistrationRequest: UserRegistrationRequest) {
-        check(userRegistrationRequest.password ==
+        require(userRegistrationRequest.password ==
                 userRegistrationRequest.repeatedPassword,
                 {"Values 'password' and 'repeatedPassword' must be equal"}
         )
