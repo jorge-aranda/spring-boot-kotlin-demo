@@ -1,11 +1,13 @@
 
 package es.jaranda.poc.springbootkolindemo.service
 
+import es.jaranda.poc.springbootkolindemo.exceptions.InvalidCredentialsException
 import es.jaranda.poc.springbootkolindemo.exceptions.ResourceNotFoundException
 import es.jaranda.poc.springbootkolindemo.model.domain.User
 import es.jaranda.poc.springbootkolindemo.repository.UserRepository
 import io.vavr.control.Try
 import io.vavr.kotlin.`try`
+import io.vavr.kotlin.option
 import org.springframework.stereotype.Service
 
 interface UserService {
@@ -39,9 +41,11 @@ class UserServiceImpl(val userRepository: UserRepository) : UserService {
 
     override fun findByUsernameAndHashedPassword(
             username: String,
-            hashedPassword: String): Try<User> {
-        TODO("not implemented")
-    }
+            hashedPassword: String
+    ): Try<User> = userRepository.findByUsername(username)
+            .takeIf { user -> user?.hashedPassword == hashedPassword }
+            .option()
+            .toTry { InvalidCredentialsException() }
 
     private fun checkUsernameIsNewOrReplacement(user: User) {
         val persistedUser = userRepository.findByUsername(user.username)
