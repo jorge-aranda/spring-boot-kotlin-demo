@@ -18,9 +18,10 @@ class UserController(val userService: UserService,
     }
 
     @GetMapping("{id}")
-    fun get(@PathVariable("id") id : String) : List<UserDataResponse> {
-        TODO("not implemented")
-    }
+    fun get(@PathVariable("id") id : String) =
+        userMapper.toResponse(
+                userService.get(id).get()
+        )
 
     @PostMapping
     fun registerUser(
