@@ -6,7 +6,6 @@ import es.jaranda.poc.springbootkolindemo.model.dto.request.KartofelCreationRequ
 import es.jaranda.poc.springbootkolindemo.service.KartofelService
 import org.springframework.web.bind.annotation.*
 
-
 @RequestMapping("kartofeln")
 @RestController
 class KartofelController(val kartofelService : KartofelService,
