@@ -13,9 +13,9 @@ class UserController(val userService: UserService,
                      val userMapper: UserMapper) {
 
     @GetMapping
-    fun findAll() : List<UserDataResponse> {
-        TODO("not implemented")
-    }
+    fun findAll() : List<UserDataResponse> =
+            userService.findAll()
+            .map(userMapper::toResponse)
 
     @GetMapping("{id}")
     fun get(@PathVariable("id") id : String) =
@@ -25,7 +25,7 @@ class UserController(val userService: UserService,
 
     @PostMapping
     fun registerUser(
-            @RequestBody userRegistrationRequest: UserRegistrationRequest){
+            @RequestBody userRegistrationRequest: UserRegistrationRequest) {
         check(userRegistrationRequest.password ==
                 userRegistrationRequest.repeatedPassword,
                 {"Values 'password' and 'repeatedPassword' must be equal"}
