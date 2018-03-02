@@ -29,7 +29,4 @@ class KartofelServiceImpl(val kartofelRepository: KartofelRepository)
     }
     override fun save(kartofel : Kartofel) = kartofelRepository.save(kartofel)
 
-    // TODO async save operation?
-    // TODO async findAll and get operations?
-
 }
