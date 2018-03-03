@@ -13,8 +13,17 @@ class ControllersConfiguration {
             IllegalStateException::class,
             IllegalArgumentException::class
     )
-    fun handleBadRequests(ex: Exception, response: HttpServletResponse) {
+    fun handleBadRespones(ex: Exception, response: HttpServletResponse) {
         response.sendError(HttpStatus.BAD_REQUEST.value(), ex.message)
+    }
+
+    @ExceptionHandler(
+            NotImplementedError::class,
+            UnsupportedOperationException::class
+    )
+    fun handleNotImplementedResponses(ex: Exception,
+                                      response: HttpServletResponse) {
+        response.sendError(HttpStatus.NOT_IMPLEMENTED.value(), ex.message)
     }
 
 }
