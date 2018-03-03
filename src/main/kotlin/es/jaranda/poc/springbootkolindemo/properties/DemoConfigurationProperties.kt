@@ -13,9 +13,11 @@ import javax.validation.constraints.NotNull
 @ConfigurationProperties(prefix = "es.jaranda.poc.springbootkolindemo.demo")
 class DemoConfigurationProperties {
 
+    /** Default greet message in case of no message passed as parameter */
     @NotNull
     lateinit var defaultGreet : String
 
+    /** Number of repetitions of greeting on console log */
     @NotNull
     @Min(1)
     lateinit var greetOcurrencies: Integer
