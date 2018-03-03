@@ -1,16 +1,24 @@
 
 package es.jaranda.poc.springbootkolindemo.service
 
+import es.jaranda.poc.springbootkolindemo.properties.DemoConfigurationProperties
 import spock.lang.Specification
 
 class DemoServiceSpec extends Specification {
 
     def static final DEFAULT_GREET = "Hello Spock!"
 
+    private final def demoConfigurationPropertiesMock =
+            Mock(DemoConfigurationProperties)
+
     def """Given demoService, when it is called greet should be return a
            standard greet object"""() {
         given:
-            def demoService = new DemoServiceImpl(DEFAULT_GREET)
+            1 * demoConfigurationPropertiesMock.defaultGreet >> DEFAULT_GREET
+            1 * demoConfigurationPropertiesMock.greetOcurrencies >> 1
+            def demoService = new DemoServiceImpl(
+                    demoConfigurationPropertiesMock
+            )
         when:
             def result = demoService.greet()
         then:
