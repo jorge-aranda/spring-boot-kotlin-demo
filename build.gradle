@@ -1,4 +1,9 @@
 
+configurations {
+    optional
+    compile.extendsFrom optional
+}
+
 buildscript {
     ext {
         kotlinVersion = '1.2.10'
@@ -40,6 +45,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')
 //	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
     compile('org.springframework.boot:spring-boot-starter-validation')
+    optional("org.springframework.boot:spring-boot-configuration-processor")
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 
