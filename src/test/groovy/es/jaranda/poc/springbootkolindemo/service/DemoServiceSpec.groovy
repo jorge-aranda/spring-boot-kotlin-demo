@@ -14,8 +14,8 @@ class DemoServiceSpec extends Specification {
     def """Given demoService, when it is called greet should be return a
            standard greet object"""() {
         given:
-            1 * demoConfigurationPropertiesMock.defaultGreet >> DEFAULT_GREET
-            1 * demoConfigurationPropertiesMock.greetOcurrencies >> 1
+            demoConfigurationPropertiesMock.defaultGreet >> DEFAULT_GREET
+            demoConfigurationPropertiesMock.greetOcurrencies >> 1
             def demoService = new DemoServiceImpl(
                     demoConfigurationPropertiesMock
             )
