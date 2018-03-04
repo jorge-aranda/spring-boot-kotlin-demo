@@ -3,3 +3,7 @@ es.jaranda.poc.springbootkolindemo:
   demo:
     defaultGreet: Hello World!
     greetOcurrencies: 1
+
+logging:
+  level:
+    es.jaranda.poc.springbootkolindemo: DEBUG
