@@ -1,12 +1,14 @@
 
 package es.jaranda.poc.springbootkolindemo.scheduledtask
 
+import es.jaranda.poc.springbootkolindemo.test.annotations.ExcludeFromTests
 import es.jaranda.poc.springbootkolindemo.utils.log
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 import kotlin.system.measureNanoTime
 import kotlin.system.measureTimeMillis
 
+@ExcludeFromTests
 @Component
 class MeasureSchedulerTask {
 
