@@ -16,6 +16,7 @@ interface UserRepository {
     fun findByUsername(username: String) : User?
 }
 
+// TODO pending to include unit test
 @Repository
 class UserRepositoryImpl : UserRepository {
     private val users : MutableMap<String, User> = mutableMapOf(

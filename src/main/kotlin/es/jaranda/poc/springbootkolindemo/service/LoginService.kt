@@ -10,6 +10,7 @@ interface LoginService {
     fun login(username : String, password: String) : Try<User>
 }
 
+// TODO pending to include unit test
 @Service
 class LoginServiceImpl(val userService: UserService,
                        val hasherUtil : HasherUtil) : LoginService {

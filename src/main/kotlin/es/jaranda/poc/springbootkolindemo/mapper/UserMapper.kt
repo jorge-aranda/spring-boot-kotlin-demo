@@ -14,6 +14,7 @@ interface UserMapper {
     fun toResponse(domain : User) : UserDataResponse
 }
 
+// TODO pending to include unit test
 @Component
 class UserMapperImpl(val hasherUtil: HasherUtil) : UserMapper {
     override fun toDomain(request: UserRegistrationRequest) = User(

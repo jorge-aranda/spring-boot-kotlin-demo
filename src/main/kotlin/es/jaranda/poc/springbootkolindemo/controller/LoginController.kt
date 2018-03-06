@@ -6,6 +6,7 @@ import es.jaranda.poc.springbootkolindemo.model.dto.request.LoginRequest
 import es.jaranda.poc.springbootkolindemo.service.LoginService
 import org.springframework.web.bind.annotation.*
 
+// TODO pending to include an integration test?
 @RequestMapping("/login")
 @RestController
 class LoginController(val loginService: LoginService,

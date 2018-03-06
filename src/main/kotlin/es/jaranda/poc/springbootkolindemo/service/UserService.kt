@@ -20,6 +20,7 @@ interface UserService {
             hashedPassword: String) : Try<User>
 }
 
+// TODO pending to include unit test
 @Service
 class UserServiceImpl(val userRepository: UserRepository) : UserService {
 
