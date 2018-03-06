@@ -12,6 +12,7 @@ interface KartofelRepository {
     fun save(kartofel : Kartofel)
 }
 
+// TODO pending to include unit test
 @Repository
 class KartofelRepositoryImpl : KartofelRepository {
 

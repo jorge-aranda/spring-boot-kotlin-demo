@@ -13,6 +13,7 @@ interface KartofelMapper {
     fun toResponse(domain : Kartofel) : KartofelResponse
 }
 
+// TODO pending to include unit test
 @Component
 class KartofelMapperImpl : KartofelMapper {
     override fun toDomain(request: KartofelCreationRequest) = request.toDomain()

@@ -14,6 +14,7 @@ interface KartofelService {
     fun save(kartofel : Kartofel)
 }
 
+// TODO pending to include unit test
 @Service
 class KartofelServiceImpl(val kartofelRepository: KartofelRepository)
     : KartofelService {
