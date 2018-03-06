@@ -19,17 +19,16 @@ interface UserRepository {
 @Repository
 class UserRepositoryImpl : UserRepository {
     private val users : MutableMap<String, User> = mutableMapOf(
-            "1".to(User(
+            "1" to User(
                     id="1",
                     username="admin",
                     hashedPassword = "admin".hashWithSha256(),
-                    role = UserRole.ADMIN)
+                    role = UserRole.ADMIN
             ),
-            "2".to(User(
+            "2" to User(
                     id="2",
                     username="user",
                     hashedPassword = "user".hashWithSha256()
-                )
             )
     )
 
