@@ -16,7 +16,7 @@ class DemoServiceSpec extends Specification {
         given:
             demoConfigurationPropertiesMock.defaultGreet >> DEFAULT_GREET
             demoConfigurationPropertiesMock.greetOcurrencies >> 1
-            def demoService = new DemoServiceImpl(
+            final def demoService = new DemoServiceImpl(
                     demoConfigurationPropertiesMock
             )
         when:
