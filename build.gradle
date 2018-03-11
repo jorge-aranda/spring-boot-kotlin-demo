@@ -7,7 +7,7 @@ configurations {
 buildscript {
     ext {
         kotlinVersion = '1.2.30'
-        springBootVersion = '1.5.9.RELEASE'
+        springBootVersion = '1.5.10.RELEASE'
         vavrVersion = '0.9.2'
     }
     repositories {
@@ -63,4 +63,9 @@ dependencies {
     testCompile 'org.objenesis:objenesis:2.2'
     testCompile 'cglib:cglib-nodep:3.2.0'
     testCompile 'org.codehaus.groovy:groovy-all:2.4.5'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.5.1'
+    distributionUrl = distributionUrl.replace("bin", "all")
 }
