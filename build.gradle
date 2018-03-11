@@ -53,6 +53,12 @@ dependencies {
     /* Kotlin */
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin")
+    // TODO necessary until upgrading to Spring Boot 2 (please, check on upgrading if future versions of Spring Boot 1.x.x solves this problem without this forced dependency)
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.8.11.1")
+
+    // JSR-310 and ObjectMapper integration
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 
     /* Vavr */
     compile("io.vavr:vavr:${vavrVersion}")
